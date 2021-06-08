@@ -17,8 +17,9 @@ public class Game {
             String s = in.nextLine();
             List<String> words = commandParser.parse(s);
             Command command = CommandFactory.get(words.get(0));
-            command.execute(this,words.subList(1, words.size()));
-            output.println(s);
+            if(command != null){
+                command.execute(this,words.subList(1, words.size()));
+            }
         }
     }
 
