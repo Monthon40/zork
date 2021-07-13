@@ -1,17 +1,16 @@
 package io.muzoo.ssc.zork;
 
-import java.awt.event.ItemEvent;
-import java.lang.reflect.Array;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Map {
+public class Map<S extends Serializable> {
 
     private String description = "Description";
     private String name = "Default room name";
     private final World world;
     private final List<Item> items = new ArrayList<>();
-    public T level = null;
+    public S level = null;
 
     public Map(final World containWorld){
         this.world = containWorld;
@@ -21,11 +20,11 @@ public class Map {
         return this.world;
     }
 
-    public T level(){
+    public S level(){
         return this.level;
     }
 
-    public Map<T> level(final T newLevel){
+    public Map<S> level(final S newLevel){
         this.level = newLevel;
         return this;
     }
@@ -34,12 +33,12 @@ public class Map {
         return this.items;
     }
 
-    public Map<T> addItem(final Item item){
+    public Map<S> addItem(final Item item){
         this.items.add(item);
         return this;
     }
 
-    public Map<T> removeItem(final Item item){
+    public Map<S> removeItem(final Item item){
         this.items.remove(item);
         return this;
     }
@@ -48,7 +47,7 @@ public class Map {
         return this.description;
     }
 
-    public Map<T> description(final String newDescription){
+    public Map<S> description(final String newDescription){
         this.description = newDescription;
         return this;
     }
