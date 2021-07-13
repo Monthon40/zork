@@ -10,18 +10,18 @@ public class World {
     }
 
     //Keep track of all maps.
-    private final HashMap<Class<? extends Map<?, D>>, Map<?, D>> map;
+    private final HashMap<Class<? extends Map<?>>, Map<?>> map;
 
     public World(){
         this.map = new HashMap<>();
     }
 
-    pubic World addMap(final Class<? extends Map<?, D>> mapName, final Map<?, D> newMap){
+    public World addMap(final Class<? extends Map<?>> mapName, final Map<?> newMap){
         this.map.put(mapName, newMap);
         return this;
     }
 
-    public World addMap(final Class<? extends Map<?, D>> mapName){
+    public World addMap(final Class<? extends Map<?>> mapName){
         try{
             return this.addMap(mapName, mapName.getConstructor(World.class).newInstance(this));
         } catch (InstantiationException e) {
@@ -36,11 +36,11 @@ public class World {
         return null;
     }
 
-    public < T extends Map<?, D>> T getMap(final Map<?, D> thisMap){
+    public < T extends Map<?>> T getMap(final Map<?> thisMap){
         return (T) this.map.get(thisMap);
     }
 
-    public Map<?, D> getMap(Class<?> crass){
+    public Map<?> getMap(Class<?> crass){
         return this.map.get(crass);
     }
 }
