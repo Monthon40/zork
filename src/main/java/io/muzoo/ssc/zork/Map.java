@@ -7,10 +7,11 @@ import java.util.List;
 public class Map<S extends Serializable> {
 
     private String description = "Description";
-    private String name = "Default room name";
+    private String title = "Default room name";
     private final World world;
     private final List<Item> items = new ArrayList<>();
     public S level = null;
+
 
     public Map(final World containWorld){
         this.world = containWorld;
@@ -55,4 +56,15 @@ public class Map<S extends Serializable> {
     public void enter(final Player player){
         System.out.println(player.currentDescription);
     }
+
+    public String title(){
+        return this.title;
+    }
+
+    public Map<S> title(final String newTitle){
+        this.title = newTitle;
+        return this;
+    }
+
+
 }

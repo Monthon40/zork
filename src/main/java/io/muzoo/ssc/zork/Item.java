@@ -11,6 +11,7 @@ public class Item {
     }
 
 
+
     public String getNameItem() {
         return nameItem;
     }
@@ -25,4 +26,6 @@ public class Item {
         this.damage = power;
         return this;
     }
+
+
 }
