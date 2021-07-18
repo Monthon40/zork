@@ -10,7 +10,7 @@ public class Map<S extends Serializable> {
     private String title = "Default room name";
     private final World world;
     private final List<Item> items = new ArrayList<>();
-    public S level = null;
+    private S level = null;
 
 
     public Map(final World containWorld){

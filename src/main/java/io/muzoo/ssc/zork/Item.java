@@ -16,7 +16,7 @@ public class Item {
         return nameItem;
     }
 
-    public Item name(final String newName){
+    public Item nameItem(final String newName){
         this.nameItem = newName;
         return this;
     }

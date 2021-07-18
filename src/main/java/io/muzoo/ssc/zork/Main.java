@@ -1,7 +1,7 @@
 package io.muzoo.ssc.zork;
 
 import io.muzoo.ssc.zork.command.Command;
-import io.muzoo.ssc.zork.Player;
+import io.muzoo.ssc.zork.command.CommandFactory;
 
 
 import java.util.HashMap;
@@ -18,8 +18,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-//        Game game = new Game();
-//        game.run();
+
 
 
         final Player player = new Player(10, "test");

@@ -1,4 +1,4 @@
-package io.muzoo.ssc.zork;
+package io.muzoo.ssc.zork.command;
 
 import io.muzoo.ssc.zork.command.Command;
 import io.muzoo.ssc.zork.command.ExitCommand;
@@ -50,11 +50,11 @@ public final class CommandFactory {
     private static final Map<String, Command> COMMAND_MAP = new HashMap<>();
 
     static{
-//        COMMAND_MAP.put("play", new PlayCommand());
+        COMMAND_MAP.put("play", new PlayCommand());
 //        COMMAND_MAP.put("drop", new DropCommand());
         COMMAND_MAP.put("exit", new ExitCommand());
 //        COMMAND_MAP.put("info", new InfoCommand());
-//        COMMAND_MAP.put("help", new HelpCommand());
+        COMMAND_MAP.put("help", new CommandHelp());
     }
 
     public static Command getCommand(final String cmd){
