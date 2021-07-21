@@ -9,8 +9,6 @@ public class Player {
 
 
     public String currentDescription;
-
-
     private Main.Status death;
     private Map<?> currentPlace;
     private String name;
@@ -64,6 +62,41 @@ public class Player {
         this.currentPlace = area;
     }
 
+    public List<Item> getInventory() {
+        return inventory;
+    }
+
+
+
+    public Main.Status getDeath(){
+        return this.death;
+    }
+
+    public void removeItem(final Item item){
+        this.inventory.remove(item);
+    }
+
+    public boolean hasItem(final String name){
+        for(final Item item: this.getInventory()){
+            if(item.getNameItem().equals(name)){      //.name()
+                return true;
+            }
+        }
+        return false;
+    }
+//--------------------------------- unused ------------------
+    public void setDeath(Main.Status death){
+        death = Main.Status.DIE;
+        this.death = death;
+    }
+
+    public void rename(final String newName){
+        this.name = newName;
+    }
+    public void addItem(final Item item){
+        this.inventory.add(item);
+    }
+
     public String getName() {
         return name;
     }
@@ -90,39 +123,6 @@ public class Player {
 
     public void setMaxHp(int maxHp) {
         this.maxHp = maxHp;
-    }
-
-    public List<Item> getInventory() {
-        return inventory;
-    }
-
-    public void setDeath(Main.Status death){
-        death = Main.Status.DIE;
-        this.death = death;
-    }
-
-    public Main.Status getDeath(){
-        return this.death;
-    }
-
-    public void rename(final String newName){
-        this.name = newName;
-    }
-    public void addItem(final Item item){
-        this.inventory.add(item);
-    }
-
-    public void removeItem(final Item item){
-        this.inventory.remove(item);
-    }
-
-    public boolean hasItem(final String name){
-        for(final Item item: this.getInventory()){
-            if(item.getNameItem().equals(name)){      //.name()
-                return true;
-            }
-        }
-        return false;
     }
 
 }

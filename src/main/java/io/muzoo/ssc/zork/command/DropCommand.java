@@ -12,7 +12,12 @@ public class DropCommand implements Command{
             Item item = new Item().nameItem(args[2]);
             if(item != null){
                 player.removeItem(item);
-                world.getMap(player)
+                world.getMap(player.getCurrentPlace().addItem(item));
+                System.out.println("You dropped" + item.getNameItem());   //item.nameItem()
+            } else{
+                System.out.println("----------------------------\n"
+                        + "Not able to use this command\n"
+                        + "----------------------------\n");
             }
         }
     }

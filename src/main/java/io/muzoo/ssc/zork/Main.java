@@ -14,14 +14,13 @@ public class Main {
     Status level = Status.MENU;
 
     public enum Status {
-        PLAYING, WIN, DIE, MENU
+        PLAYING, DIE, MENU
     }
 
-    public static void main(String[] args) {
+    public void main(final String[] args) {
 
 
-
-        final Player player = new Player(10, "test");
+        final Player player = new Player(20, "test");
         final World world = new World();
         Scanner scanner = new Scanner(System.in);
         Main game = new Main();
@@ -29,8 +28,7 @@ public class Main {
         try (Scanner reader = new Scanner(System.in)) {
             Status death = null;
             while ((death = player.getDeath()) == Status.PLAYING) {
-                final io.muzoo.ssc.zork.Map<?> currentMap
-                        = player.getCurrentPlace();
+                final io.muzoo.ssc.zork.Map<?> currentMap = player.getCurrentPlace();
                 final String currentTitle = currentMap.title();
                 System.out.println(currentTitle);
             }
@@ -43,17 +41,18 @@ public class Main {
             }
             System.out.println("What?");
         }
+
     }
 
+    public static final Map<String, World.Direction> ttt = Main.ttt();
 
-        public static final Map<String, World.Direction> ttt = Main.ttt();
+    private static Map<String, World.Direction> ttt() {
+        final Map<String, World.Direction> map = new HashMap<>();
+        map.put("north", World.Direction.NORTH);
+        map.put("south", World.Direction.SOUTH);
+        map.put("east", World.Direction.EAST);
+        map.put("west", World.Direction.WEST);
+        return map;
+    }
 
-        private static Map<String, World.Direction> ttt() {
-            final Map<String, World.Direction> map = new HashMap<>();
-            map.put("north", World.Direction.NORTH);
-            map.put("south", World.Direction.SOUTH);
-            map.put("east", World.Direction.EAST);
-            map.put("west", World.Direction.WEST);
-            return map;
-        }
 }

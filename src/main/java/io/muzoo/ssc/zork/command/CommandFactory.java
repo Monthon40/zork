@@ -51,9 +51,9 @@ public final class CommandFactory {
 
     static{
         COMMAND_MAP.put("play", new PlayCommand());
-//        COMMAND_MAP.put("drop", new DropCommand());
+        COMMAND_MAP.put("drop", new DropCommand());
         COMMAND_MAP.put("exit", new ExitCommand());
-//        COMMAND_MAP.put("info", new InfoCommand());
+        COMMAND_MAP.put("info", new InfoCommand());
         COMMAND_MAP.put("help", new CommandHelp());
     }
 

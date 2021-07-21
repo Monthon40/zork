@@ -8,7 +8,5 @@ import io.muzoo.ssc.zork.World;
 
 public interface Command {
 
-
-
     void execute(String[] args, Main.Status level, Player player, World world);
 }
