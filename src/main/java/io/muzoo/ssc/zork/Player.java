@@ -58,8 +58,8 @@ public class Player {
         return this.currentPlace;
     }
 
-    public void setCurrentPlace(final Map<?> area){
-        this.currentPlace = area;
+    public void setCurrentPlace(final Map<?> currentPlace){
+        this.currentPlace = currentPlace;
     }
 
     public List<Item> getInventory() {
@@ -125,4 +125,7 @@ public class Player {
         this.maxHp = maxHp;
     }
 
+    public void setCurrentDescription(String currentDescription) {
+        this.currentDescription = currentDescription;
+    }
 }
